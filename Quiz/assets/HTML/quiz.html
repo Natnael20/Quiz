@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/Image/Logo1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/assets/CSS/quiz.css">
+    <title>Quiz</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+            <div class="logo-link">
+                <a class="navbar-brand" href="index.html"><img src="/assets/Image/logo.png" class="img-fluid" alt="logo"></a>
+            </div>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>Menu
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                            data-bs-toggle="dropdown">Categories</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Science</a></li>
+                            <li><a class="dropdown-item" href="#">History</a></li>
+                            <li><a class="dropdown-item" href="quiz.html">General Knowledge</a></li>
+                            <li><a class="dropdown-item" href="#">Geography</a></li>
+                            <li><a class="dropdown-item" href="#">Mathematics</a></li>
+                            <li><a class="dropdown-item" href="#">Literature</a></li>
+                            <li><a class="dropdown-item" href="#">Movies</a></li>
+                            <li><a class="dropdown-item" href="#">Music</a></li>
+                            <li><a class="dropdown-item" href="#">Sports</a></li>
+                            <li><a class="dropdown-item" href="#">Technology</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="challenge.html">Challenge</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">High Scores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Create A Game</a>
+                    </li>
+                </ul>
+                <div class="security text-center text-light d-flex gap-2">
+                    <button class="btn nav-button" id="login">Log-in</button>
+                    <button class="btn nav-button" id="signin">Register</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="start-container">
+        <div class="start-quiz text-center">
+            <!--Welcome-->
+            <div class="container text-center" style="margin-top: 3%;">
+                <h3 class="text-light" id="welcome-head">Welcome to General Knowledge quiz!<br><span class="luck text-center">Good Luck!</span></h3>
+            </div>
+            <button class="btn text-light mt-5" id="start-btn">Start The Quiz</button>
+        </div>
+    </div>            
+    <!--quiz-->
+    <main id="quiz-container">
+        <!--quiz section-->
+        <div class="app mt-4">
+            <div class="quiz">
+                <h4 id="question" class="text-center">Question Goes Here</h4>
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn answer" type="submit">Answer 1</button>
+                    <button class="btn answer" type="submit">Answer 2</button>
+                    <button class="btn answer" type="submit">Answer 3</button>
+                    <button class="btn answer" type="submit">Answer 4</button>
+                </div>
+                <button class="btn mt-4" id="next-btn" type="button">Next</button>
+            </div>
+            <button class="btn mt-4" id="home-btn" type="button" >Home</button>
+            <button class="btn mt-4 float-end" id="skip-btn" type="button">Skip</button>
+        </div>
+    </main>
+    <!--related topics-->
+    <div class="container text-light more-quiz" style="margin-top: 5%;">
+        <h4>Related Quiz</h4>
+        <p>Challenge Yourself</p>
+        <div class="related-topics" style="border-top: 1px solid #fff;">
+            <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" slides-per-view="3"
+            space-between="30" free-mode="true">
+            <swiper-slide>
+                <div class="Movies-slider slider">
+                    <img src="/assets/Image/movies.jpg" class="img-fluid" alt="movies">
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="Technology-slider slider">
+                    <img src="/assets/Image/Technology.jpg" class="img-fluid" alt="movies">
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="Math-slider slider">
+                    <img src="/assets/Image/Math.jpg" class="img-fluid" alt="movies">
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="Science-slider slider">
+                    <img src="/assets/Image/Science.jpg" class="img-fluid" alt="movies">
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="Geography-slider slider">
+                    <img src="/assets/Image/geography.jpg" class="img-fluid" alt="movies">
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="litterature-slider slider">
+                    <img src="/assets/Image/litterature.jpg" class="img-fluid" alt="movies">
+                </div>
+    
+            </swiper-slide>
+            <swiper-slide>
+                <div class="Sport-slider slider">
+                    <img src="/assets/Image/Sport.jpg" class="img-fluid" alt="movies">
+                </div>
+    
+            </swiper-slide>
+            <swiper-slide>
+                <div class="History-slider slider">
+                    <img src="/assets/Image/History.jpg" class="img-fluid" alt="movies">
+                </div>
+    
+            </swiper-slide>
+            <swiper-slide>
+                <div class="Music-slider slider">
+                    <img src="/assets/Image/music.jpg" class="img-fluid" alt="movies">
+                </div>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="container-fluid footer">
+        <div class="container">
+            <div class="row p-lg-5">
+                <div class="col-lg-3 col-sm-6 p-2 mt-5 text-light">
+                    <img src="/assets/Image/logo.png" id="logo" class="img-fluid" alt="logo">
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-links">
+                        <h3>Links
+                        </h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="challenge.html">Quiz Categories</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-links">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Community Guidelines</a></li>
+                            <li><a href="#">Support Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-links">
+                        <h3>Explore</h3>
+                        <ul>
+                            <li><a href="#">Latest Quizzes</a></li>
+                            <li><a href="#">Trivia Collection</a></li>
+                            <li><a href="#">Featured Challenges</a></li>
+                            <li><a href="#">Quiz Categories</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="social-media">
+                <a href="facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="instagram.com"><i class="fa fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="youtube.com"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            </div>
+            <div class="footer-info text-light mt-5">
+                <p style="float: right;">&copy;
+                    <script>document.write(new Date().getFullYear())</script> Your Quiz Website. All rights reserved.
+                </p>
+                <p>Designed with <span class="heart-icon">&hearts;</span> by Quizzlet</p>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/Script/quiz.js"></script>
+    <script src="/assets/Script/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</body>
+</html>

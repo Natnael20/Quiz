@@ -1,0 +1,372 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: var(--bs-darkblue);
+    height: 100%;
+}
+
+
+:root {
+    --bs-blue: #0d6efd;
+    --bs-white: #fff;
+    --bs-dark: #000000;
+    --bs-danger: #ff2020;
+    --bs-teal: #22c55e;
+    --bs-darkblue: #172554;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p,
+.btn,
+a {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.logo-link {
+    width: 13%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:1020px) {
+    .logo-link {
+        width: 20%;
+        height: auto;
+    }
+}
+
+.nav-link,
+.nav-link:hover,
+.nav-link:visited {
+    position: relative;
+    overflow: hidden;
+    color: var(--bs-white);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 33px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--bs-white);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all .5s ease-in-out;
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding: 10px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--bs-blue);
+    color: var(--bs-white);
+}
+
+.dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.nav-button, #start-btn {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 25px;
+    z-index: 2;
+    color: var(--bs-white);
+    margin: 0 auto;
+}
+
+.nav-button::before, #start-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 10cm;
+    background-color: var(--bs-blue);
+    transition: all .5s ease-in-out;
+    z-index: -1;
+
+}
+
+.nav-button:hover::before, #start-btn:hover::before {
+    right: 0;
+    color: white;
+}
+
+#start-btn {
+    border: 1px solid var(--bs-white);
+}
+
+main {
+    display: none
+}
+
+.app {
+    background-color: var(--bs-white);
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+#answer-buttons {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+}
+
+.answer {
+    display: grid;
+    line-height: 2;
+    border: 1px solid var(--bs-dark);
+    margin-top: 2%;
+    width: 100%;
+    background-color: var(--bs-white);
+    padding: 5px;
+}
+
+.answer:hover:not([disabled]) {
+    color: var(--bs-white);
+    border: 1px solid var(--bs-dark);
+    background-color: var(--bs-blue);
+
+}
+
+.answer:disabled {
+    cursor: no-drop;
+}
+
+#next-btn,
+#home-btn,
+#skip-btn {
+    margin: 0 auto;
+    padding: 10px 30px;
+    width: 30%;
+    border: 1px solid var(--bs-dark);
+}
+
+#next-btn:hover,
+#home-btn:hover,
+#skip-btn:hover {
+    color: var(--bs-white);
+    background-color: var(--bs-blue);
+}
+
+.answer.correct {
+    background-color: var(--bs-teal);
+    color: var(--bs-white);
+}
+
+.answer.incorrect {
+    background-color: var(--bs-danger);
+    color: var(--bs-white);
+}
+
+@media screen and (max-width:678px) {
+
+    #next-btn,
+    #home-btn,
+    #skip-btn {
+        width: auto;
+    }
+}
+
+.more-quiz {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 50px;
+}
+.slider::before {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    color: var(--bs-white);
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.Movies-slider::before {
+    content: 'Movies';
+}
+
+.litterature-slider::before {
+    content: 'Litterature';
+}
+
+.Technology-slider::before {
+    content: "Tech";
+}
+
+.Math-slider::before {
+    content: 'Mathematics';
+}
+
+.Science-slider::before {
+    content: 'Science';
+}
+
+.Geography-slider::before {
+    content: 'Geography';
+}
+
+.Sport-slider::before {
+    content: 'Sport';
+}
+
+.History-slider::before {
+    content: 'History';
+}
+
+.Music-slider::before {
+    content: 'Music';
+}
+
+
+.slider::after {
+    content: 'Start Quiz';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bs-blue);
+    transition: all .5s ease-in-out;
+    color: var(--bs-white);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+}
+
+.slider:hover::after {
+    top: 80%;
+    cursor: pointer;
+
+}
+
+.slider img {
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.footer {
+    background-color: var(--bs-dark);
+    margin-top: 10%;
+}
+
+.footer-links {
+    display: grid;
+    align-items: center;
+    color: var(--bs-white);
+    padding: 10px 20px;
+}
+
+.footer-links ul li {
+    list-style: none;
+    margin-left: -30px;
+}
+
+.footer-links ul li a {
+    color: var(--bs-white);
+    text-decoration: none;
+    line-height: 2;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    height: 2px;
+    background-color: var(--bs-white);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: all .5s ease-in-out;
+}
+
+.footer-links a:hover::before {
+    transform: scaleX(1);
+}
+
+.social-media {
+    padding: 20px;
+}
+
+.social-media i {
+    padding: 10px 20px;
+    color: var(--bs-white);
+    margin-left: 1%;
+    font-size: 1.2rem;
+}
+
+.social-media i:hover {
+    color: var(--bs-danger);
+    transform: rotateY(360deg);
+    transition: all 1s ease-in-out;
+}
+
+
+@media screen and (max-width:1020px) {
+    .footer div > div {
+        padding: 10px;
+        margin-top: 5%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    .more-quiz>h4,
+    p,
+    .related-topics {
+        display: none;
+    }
+}
