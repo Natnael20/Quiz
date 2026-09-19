@@ -1,0 +1,362 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    --bs-blue: #0d6efd;
+    --bs-white: #fff;
+    --bs-dark: #000000;
+    --bs-danger: #ff2020;
+    --bs-teal: #22c55e;
+    --bs-darkblue: #172554;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 10%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p,
+.btn,
+a {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 25px;
+    z-index: 2;
+    color: var(--bs-white);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 10cm;
+    background-color: var(--bs-blue);
+    transition: all .5s ease-in-out;
+    z-index: -1;
+
+}
+
+.btn:hover::before {
+    right: 0;
+    color: white;
+}
+
+.navbar-section {
+    background-image: url("/assets/Image/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+}
+
+@media screen and (max-width:1024px) {
+    .navbar-section {
+        height: 100vh;
+        padding: 30px;
+    }
+}
+
+.navbar-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bs-dark);
+    opacity: .5;
+}
+
+.logo-link {
+    width: 13%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:780px) {
+    .logo-link {
+        width: 20%;
+    }
+}
+
+
+.nav-link,
+.nav-link:hover,
+.nav-link:visited {
+    position: relative;
+    overflow: hidden;
+    color: var(--bs-white);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 33px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--bs-white);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all .5s ease-in-out;
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    transition: all .5s ease-in-out;
+}
+.dropdown-menu li a {
+    padding: 10px;
+}
+.dropdown-menu li a:hover {
+    background-color: var(--bs-blue);
+    color: var(--bs-white);
+}
+.dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+.welcome-section {
+    z-index: 2;
+}
+/*about us section*/
+.video-container {
+    position: relative;
+    display: flex;
+    align-items: end;
+}
+.video-container.hide-before::before {
+    display: none;
+}
+iframe {
+    width: 100%;
+}
+.thumbnail {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    transform: translate(50%, 50%);
+    width: 100%;
+    height: 300px;
+    background-color: var(--bs-dark);
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+#youtubeVideo {
+    width: 200%;
+    height: 450px;
+}
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    background-color: var(--bs-danger);
+    border: 1px solid white;
+    padding: 20px 30px;
+    border-radius: 45px;
+    z-index: 2;
+}
+
+.play-button i {
+    color: var(--bs-white);
+    font-size: 25px;
+}
+/*category section*/
+.category-button {
+    color: var(--bs-dark);
+    position: relative;
+    overflow: hidden;
+    padding: 10px 25px;
+}
+
+.category-button:hover {
+    color: var(--bs-white);
+}
+.subject img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.card-img img {
+    overflow: hidden;
+    height: 70vh;
+    width: 100%;
+}
+
+/*trivia facts*/
+.zoom {
+    overflow: hidden;
+}
+
+.zoom img {
+    transition: transform 0.5s;
+}
+
+.zoom:hover img {
+    transform: scale(1.2);
+    /* You can adjust the scale factor for the desired zoom level */
+}
+
+/*contact section*/
+.forum {
+    display: grid;
+    transition: all 1s ease-in-out;
+}
+.forum input,
+textarea {
+    line-height: 2.5;
+    border: none;
+    outline: none;
+    margin-top: 2%;
+    border-bottom: 1px solid var(--bs-dark);
+    resize: none;
+}
+.forum-button {
+    border: 1px solid var(--bs-dark);
+    color: var(--bs-dark);
+}
+
+.forum-button a {
+    text-decoration: none;
+    color: var(--bs-dark);
+}
+
+.forum-button:hover {
+    color: var(--bs-white);
+}
+
+.subscribe-input {
+    display: flex;
+    gap: 10px;
+}
+
+.subscribe-input input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--bs-dark);
+}
+
+.subscribe-input button {
+    color: var(--bs-dark);
+    text-transform: capitalize;
+}
+
+.subscribe-input .btn:hover {
+    color: var(--bs-white);
+}
+
+@media screen and (max-width:678px) {
+    .subscription-section {
+        margin-top: 10%;
+    }
+}
+
+/*footer section*/
+.footer {
+    background-color: var(--bs-dark);
+    margin-top: 10%;
+}
+
+.footer-links {
+    display: grid;
+    align-items: center;
+    color: var(--bs-white);
+    padding: 10px 20px;
+}
+
+.footer-links ul li {
+    list-style: none;
+    margin-left: -30px;
+}
+
+.footer-links ul li a {
+    color: var(--bs-white);
+    text-decoration: none;
+    line-height: 2;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    height: 2px;
+    background-color: var(--bs-white);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: all .5s ease-in-out;
+}
+
+.footer-links a:hover::before {
+    transform: scaleX(1);
+}
+
+.social-media {
+    padding: 20px;
+}
+
+.social-media i {
+    padding: 10px 20px;
+    color: var(--bs-white);
+    margin-left: 1%;
+    font-size: 1.2rem;
+}
+
+.social-media i:hover {
+    color: var(--bs-danger);
+    transform: rotateY(360deg);
+    transition: all 1s ease-in-out;
+}
+
+@media screen and (max-width:1020px) {
+    .footer div > div {
+        padding: 10px;
+        margin-top: 5%;
+    }
+}
